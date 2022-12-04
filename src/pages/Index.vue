@@ -1,5 +1,7 @@
 <template>
-  <div class="relative flex h-screen w-screen flex-col items-center bg-black">
+  <div
+    class="relative flex h-screen w-screen select-none flex-col items-center bg-black"
+  >
     <Header
       v-if="currentState != 'prepare'"
       :title1="title1"
