@@ -7,7 +7,7 @@
     />
     <NavBar v-if="currentState == 'prepare'" />
     <div
-      class="flex w-full flex-1 items-center justify-center p-10 xs:max-w-xs"
+      class="flex w-full flex-1 items-center justify-center p-10 xs:max-w-[360px]"
     >
       <StartGameButton
         v-if="currentState == 'prepare'"
@@ -17,7 +17,7 @@
       <Graphic :type="targetGraphic" v-if="currentState == 'game'" />
     </div>
     <div
-      class="grid flex-none grid-cols-2 px-4 xs:max-w-xs"
+      class="grid flex-none grid-cols-2 px-4 xs:max-w-[360px]"
       :class="currentState !== 'game' && 'pointer-events-none'"
     >
       <Graphic
