@@ -8,15 +8,10 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: [
-        "favicon.png",
-        "favicon.ico",
-        "robots.txt",
-        "apple-touch-icon.png",
-      ],
+      includeAssets: ["favicon.png", "robots.txt", "apple-touch-icon.png"],
       manifest: {
         name: "反應速度SpeedUp!",
-        short_name: "反應速度!",
+        short_name: "反應速度SpeedUp!",
         start_url: "/",
         display: "standalone",
         background_color: "#000000",

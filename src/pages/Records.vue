@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex h-screen w-screen select-none select-none flex-col items-center bg-gray-900"
+    class="relative flex h-screen w-screen select-none flex-col items-center bg-gray-900"
   >
     <NavBar title="測驗紀錄" backTo="/setting/" />
     <div class="w-full flex-1"></div>
