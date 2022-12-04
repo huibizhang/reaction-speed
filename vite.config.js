@@ -17,10 +17,13 @@ export default defineConfig({
       manifest: {
         name: "反應速度SpeedUp!",
         short_name: "反應速度!",
-        // display: "fullscreen",
-        // start_url: "/index.html",
+        start_url: "/",
+        display: "standalone",
+        background_color: "#000000",
+        lang: "zh",
+        scope: "/",
         description: "訓練反應速度的小遊戲",
-        theme_color: "#ffffff",
+        theme_color: "#000000",
         icons: [
           {
             src: "pwa-192x192.png",
