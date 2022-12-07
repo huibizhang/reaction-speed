@@ -4,7 +4,7 @@
   >
     <NavBar title="設定" />
     <div class="w-full flex-1">
-      <!-- <SettingItem title="測驗紀錄" icon="records" to="/records/" /> -->
+      <SettingItem title="測驗紀錄" icon="records" to="/records/" />
       <SettingItem title="關於" icon="about" to="/about/" />
     </div>
   </div>

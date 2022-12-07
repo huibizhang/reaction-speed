@@ -133,6 +133,7 @@ export default {
         this.gameCountdownVal = 31;
         this.title1 = this.title2 = "";
         this.next();
+
         this.scoreBoardOpened = true;
       }
     },

@@ -36,8 +36,8 @@
         <InfoCard title="答對題數" :content="correct" />
         <InfoCard title="錯誤次數" :content="wrong" />
         <InfoCard title="得分" :content="correct * 5 - wrong * 10" />
-        <InfoCard title="平均答題" :content="reactionPerQ" />
-        <InfoCard title="平均反應" :content="reactionPerCorrect" />
+        <InfoCard title="平均答題" :content="`${reactionPerQ} 秒`" />
+        <InfoCard title="平均反應" :content="`${reactionPerCorrect} 秒`" />
       </div>
       <div class="mt-2 p-2">
         <div
@@ -64,14 +64,32 @@ export default {
       this.close();
     },
   },
+  watch: {
+    scoreBoardOpened(newVal, oldVal) {
+      if (newVal) {
+        const ls = window.localStorage;
+        const records = JSON.parse(ls.getItem("records")) ?? [];
+
+        records.push({
+          reactionPerQ: this.reactionPerQ,
+          reactionPerCorrect: this.reactionPerCorrect,
+          correct: this.correct,
+          wrong: this.wrong,
+          score: this.correct * 5 - this.wrong * 10,
+          timestamp: Date.now(),
+        });
+        window.localStorage.setItem("records", JSON.stringify(records));
+      }
+    },
+  },
   computed: {
     reactionPerQ() {
-      return `${(30 / this.correct).toFixed(5)} 秒`;
+      return (30 / this.correct).toFixed(5);
     },
     reactionPerCorrect() {
       const average =
         this.reactions.reduce((a, b) => a + b, 0) / this.reactions.length;
-      return `${average.toFixed(5)} 秒`;
+      return average.toFixed(5);
     },
   },
   components: { InfoCard },
