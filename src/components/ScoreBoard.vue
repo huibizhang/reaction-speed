@@ -39,9 +39,16 @@
         <InfoCard title="平均答題" :content="`${reactionPerQ} 秒`" />
         <InfoCard title="平均反應" :content="`${reactionPerCorrect} 秒`" />
       </div>
-      <div class="mt-2 p-2">
+      <div class="mt-2 flex space-x-2 p-2">
+        <router-link class="flex-1" to="/records/">
+          <div
+            class="flex w-full justify-center rounded-lg bg-gray-400 py-3 font-bold text-white transition-all active:scale-95 active:bg-gray-500"
+          >
+            歷史紀錄
+          </div>
+        </router-link>
         <div
-          class="flex w-full justify-center rounded-lg bg-blue-600 py-3 font-bold text-white transition-all active:scale-95 active:bg-blue-700"
+          class="flex w-full flex-1 justify-center rounded-lg bg-blue-600 py-3 font-bold text-white transition-all active:scale-95 active:bg-blue-700"
           @click="newGame()"
         >
           重新挑戰
