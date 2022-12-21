@@ -81,7 +81,8 @@ export default {
         .map((r) => {
           r.chartData = 2 - r.reactionPerCorrect;
           return r;
-        });
+        })
+        .reverse();
 
       this.chartConfig.data = {
         labels: this.chartDatas.map((r) => {
